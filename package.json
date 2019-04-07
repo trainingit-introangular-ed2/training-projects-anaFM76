@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "scripts": {
     "build:prod": "ng build --prod",
-    "build:pub": "ng build --prod --output-path docs --base-href https://trainingit-introangular-ed2.github.io/training-projects/",
+    "build:pub": "ng build --prod --output-path docs --base-href https://trainingit-introangular-ed2.github.io/training-projects-anaFM76/",
+    "http-server": "http-server ./dist/gestor-pro/ -c-1 -p4271 -a localhost o",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",
