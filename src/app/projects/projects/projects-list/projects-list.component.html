@@ -1,0 +1,38 @@
+<form>
+  <section *ngIf="projects.length>0; else empty">
+
+    <head>
+      <title>Listado de proyectos Existentes</title>
+      <meta charset="utf-8">
+    </head>
+
+    <body>
+      <table border="1"
+             width="60%">
+        <caption>Listado Proyectos Existentes</caption>
+        <tr>
+          <th>Identificador</th>
+          <th>Nombre del Proyecto</th>
+          <th>Ver</th>
+          <th>Borrar</th>
+        </tr>
+        <tr *ngFor="let pro of projects">
+          <td>{{ pro.id }}</td>
+          <td>{{ pro.name }}</td>
+          <td><a routerLink="/projects/{{ pro.id }}"
+               class="button"><span class="icon-edit"></span></a></td>
+          <td>
+            <a (click)="delete.emit(pro.id)"
+               class="button"><span class="icon-link"></span></a>
+          </td>
+        </tr>
+      </table>
+    </body>
+  </section>
+  <ng-template #empty>
+    <p><i>Todavía no existen proyectos</i></p>
+  </ng-template>
+
+  <button routerLink="/projects/new"
+          type="submit"><span class="icon-link"></span>Nuevo Proyecto</button>
+</form>

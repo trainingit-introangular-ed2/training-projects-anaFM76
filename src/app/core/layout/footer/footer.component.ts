@@ -8,7 +8,7 @@ import { environment } from '../../../../environments/environment';
 })
 export class FooterComponent implements OnInit {
   envLabel;
-
+  title = environment.appName;
   constructor() {
     this.envLabel = environment.envLabel;
   }

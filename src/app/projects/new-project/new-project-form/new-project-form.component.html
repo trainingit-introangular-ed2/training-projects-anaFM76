@@ -1,0 +1,12 @@
+<form>
+  <section>
+    <label for="nombre">Introduzca el nombre del nuevo proyecto</label>
+    <input name="Nombre"
+           type="text"
+           [(ngModel)]="project.name"
+           placeholder="Nombre Proyecto" />
+  </section>
+  <a (click)="save.emit(true)"
+     class="button"
+     type="submit"><span class="icon-edit"></span> Guardar</a>
+</form>

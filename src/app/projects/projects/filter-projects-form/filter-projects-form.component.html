@@ -1,0 +1,14 @@
+<form>
+  <div class="row">
+    <section>
+      <label for="nombre">Introduzca el nombre para buscar</label>
+      <input name="Nombre"
+             type="text"
+             [(ngModel)]="filter"
+             placeholder="Nombre Proyecto" />
+    </section>
+
+    <a (click)="search.emit(filter)"
+       class="button"><span class="icon-search"></span> Buscar</a>
+  </div>
+</form>
