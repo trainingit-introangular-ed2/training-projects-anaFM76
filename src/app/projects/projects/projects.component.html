@@ -1,4 +1,4 @@
 <app-filter-projects-form (search)="search($event)"></app-filter-projects-form>
 
-<app-projects-list [projects]="projects"
+<app-projects-list [projects]="projects$ | async"
                    (delete)="deleteProject($event)"></app-projects-list>

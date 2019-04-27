@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProjectsService } from '../../projects/projects.service';
 
 @Component({
@@ -7,10 +8,11 @@ import { ProjectsService } from '../../projects/projects.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  numberProjects: number;
+  numberProjects$: Observable<number>;
 
   constructor(private projectsService: ProjectsService) {
-    this.numberProjects = this.projectsService.count();
+    //this.projectsService.count().subscribe(val => (this.numberProjects = val));
+    this.numberProjects$ = this.projectsService.count();
   }
 
   ngOnInit() {}

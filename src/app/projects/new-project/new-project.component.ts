@@ -18,7 +18,6 @@ export class NewProjectComponent implements OnInit {
   ngOnInit() {}
 
   public saveProject() {
-    this.projectsService.saveProject(this.proyectoAnadir);
-    this.router.navigateByUrl('/projects');
+    this.projectsService.saveProject(this.proyectoAnadir).subscribe(_ => this.router.navigateByUrl('/projects'));
   }
 }

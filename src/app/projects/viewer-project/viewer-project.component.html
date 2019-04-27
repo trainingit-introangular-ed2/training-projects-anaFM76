@@ -1,5 +1,5 @@
-<app-viewer-project-form [name]="project.name"
-                         [projectId]="project.id"></app-viewer-project-form>
+<app-viewer-project-form [name]="(project$ | async)?.name"
+                         [projectId]="(project$ | async)?.id"></app-viewer-project-form>
 
 <a (click)="location.back()"
    class="button"><span class="icon-link"></span> Volver</a>
