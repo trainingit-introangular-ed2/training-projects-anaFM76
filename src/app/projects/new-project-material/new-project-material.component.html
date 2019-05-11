@@ -1,0 +1,33 @@
+<div class="container">
+  <form [formGroup]="formNuevo"
+        novalidate
+        (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Nuevo proyecto</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <input matInput
+                     placeholder="Nombre Proyecto"
+                     formControlName="name">
+              <mat-error *ngIf="formNuevo.controls['name'].hasError('required')">
+                Nombre del proyecto <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button
+                [disabled]="formNuevo.invalid"
+                color="primary"
+                type="submit">
+          <mat-icon>save</mat-icon> Guardar
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

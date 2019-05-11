@@ -38,7 +38,11 @@ export class ProjectsHttpService implements ProjectsService {
 
   filter(filter: string): Observable<Project[]> {
     return this.findAll().pipe(
-      map(projects => [...projects.filter(p => filter == null || p.name.toLowerCase().indexOf(filter.toLowerCase()) != -1)])
+      map(projects =>
+        projects == null
+          ? null
+          : [...projects.filter(p => filter == null || p.name.toLowerCase().indexOf(filter.toLowerCase()) != -1)]
+      )
     );
   }
 

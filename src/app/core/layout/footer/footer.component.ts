@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
+import { AuditorStoreService } from '../../../auditor/auditor-store.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,9 +11,12 @@ import { environment } from '../../../../environments/environment';
 export class FooterComponent implements OnInit {
   envLabel;
   title = environment.appName;
-  constructor() {
+  url: Observable<string>;
+  constructor(private auditorStoreService: AuditorStoreService) {
     this.envLabel = environment.envLabel;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.url = this.auditorStoreService.select$();
+  }
 }

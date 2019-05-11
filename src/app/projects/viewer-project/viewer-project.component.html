@@ -1,5 +1,8 @@
-<app-viewer-project-form [name]="(project$ | async)?.name"
-                         [projectId]="(project$ | async)?.id"></app-viewer-project-form>
-
-<a (click)="location.back()"
-   class="button"><span class="icon-link"></span> Volver</a>
+<div class="container">
+  <app-viewer-project-form [name]="(project$ | async)?.name"
+                           [projectId]="(project$ | async)?.id"></app-viewer-project-form>
+  <br />
+  <button mat-raised-button
+          type="button"
+          (click)="location.back()">Volver</button>
+</div>

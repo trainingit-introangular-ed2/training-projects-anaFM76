@@ -1,4 +1,6 @@
-<app-filter-projects-form (search)="search($event)"></app-filter-projects-form>
-
-<app-projects-list [projects]="projects$ | async"
-                   (delete)="deleteProject($event)"></app-projects-list>
+<div class="container">
+  <app-filter-projects-material-form (search)="search($event)"></app-filter-projects-material-form>
+  <br />
+  <app-projects-list [projects]="projects$ | async"
+                     (delete)="deleteProject($event)"></app-projects-list>
+</div>

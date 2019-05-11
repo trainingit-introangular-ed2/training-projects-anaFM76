@@ -1,5 +1,7 @@
-<app-new-project-form [(project)]="proyectoAnadir"
+<!--<app-new-project-form [(project)]="proyectoAnadir"
                       (save)="saveProject()"></app-new-project-form>
+                    <a (click)="location.back()"
+   class="button"><span class="icon-link"></span> Volver</a>-->
 
-<a (click)="location.back()"
-   class="button"><span class="icon-link"></span> Volver</a>
+<app-new-project-material [(project)]="proyectoAnadir"
+                          (save)="saveProject()"></app-new-project-material>

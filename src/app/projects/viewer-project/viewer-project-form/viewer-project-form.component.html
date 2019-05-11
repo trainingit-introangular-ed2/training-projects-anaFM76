@@ -1,18 +1,11 @@
 <form>
   <section>
-    <label for="name">Nombre Proyecto</label>
-    <input name="name"
-           type="text"
-           [value]="name"
-           readonly
-           placeholder="Nombre Proyecto" />
+    <div><b>Nombre Proyecto</b></div>
+    <div>{{name}}</div>
   </section>
+  <br />
   <section>
-    <label for="id">Identificador</label>
-    <input name="id"
-           type="text"
-           [value]="projectId"
-           readonly
-           placeholder="Identificador Proyecto" />
+    <div><b>Identificador</b></div>
+    <div>{{projectId}}</div>
   </section>
 </form>

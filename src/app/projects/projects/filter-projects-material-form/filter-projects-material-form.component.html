@@ -1,0 +1,31 @@
+<form [formGroup]="formFiltro"
+      novalidate>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Buscar</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <mat-form-field class="full-width">
+          <input matInput
+                 placeholder="Nombre Proyecto"
+                 formControlName="filter">
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button
+                  [disabled]="formFiltro.invalid"
+                  color="primary"
+                  type="button"
+                  (click)="onSubmit()">
+            <mat-icon>search</mat-icon> Buscar
+          </button>
+          <button mat-raised-button
+                  type="button"
+                  (click)="onClean()">
+            Limpiar
+          </button>
+        </mat-card-actions>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>
